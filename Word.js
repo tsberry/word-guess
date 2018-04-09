@@ -2,20 +2,20 @@ var Letter = require("./Letter.js");
 
 function Word(word) {
     this.letters = [];
-    for(var i = 0; i < word.length; i++) {
+    for (var i = 0; i < word.length; i++) {
         this.letters.push(new Letter(word.charAt(i)));
     }
 
-    function toString() {
+    this.toString = function () {
         var string = "";
-        for(var i = 0; i < letters.length; i++) {
-            string = string.concat(" ", letters[i].display());
+        for (var i = 0; i < letters.length; i++) {
+            string = string.concat(" ", letters[i]);
         }
         return string;
     }
 
-    function check(c) {
-        for(var i = 0; i < letters.length; i++) {
+    this.check = function (c) {
+        for (var i = 0; i < letters.length; i++) {
             letters[i].check(c);
         }
     }
