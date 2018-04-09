@@ -6,6 +6,15 @@ function Letter(l) {
         else return "_";
     }
     this.check = function (c) {
-        if (c === this.letter) this.guessed = true;
+        var correct = false;
+        if (c.toLowerCase() === this.letter.toLowerCase()) {
+            if(!this.guessed) correct = true;
+            this.guessed = true;
+        }
+        return correct;
     }
+}
+
+module.exports = {
+    Letter: Letter
 }
