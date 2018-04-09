@@ -20,14 +20,16 @@ function playGame() {
         }
     ]).then(function (inquirerResponse) {
         var guess = inquirerResponse.guess;
-        if(word.guesses.includes(guess)) console.log("Letter already guessed.");
+        if(word.guesses.includes(guess)) console.log("Letter already guessed.\n");
         else {
             var correct = word.check(guess);
+            console.log("");
             console.log(word.toString());
-            if(correct) console.log("Correct!");
+            console.log("");
+            if(correct) console.log("Correct!\n");
             else {
                 guesses--;
-                console.log(`Incorrect! Guesses Remaining: ${guesses}`);
+                console.log(`Incorrect! Guesses Remaining: ${guesses}\n`);
             }
         }
         if(guesses === 0 || word.complete()) {
@@ -35,7 +37,9 @@ function playGame() {
             else console.log("You got it right! Next Word!");
             guesses = 10;
             word = new Word.Word(getWord());
+            console.log("");
             console.log(word.toString());
+            console.log("");
         }
         playGame();
     });
