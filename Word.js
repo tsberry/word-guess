@@ -6,6 +6,8 @@ function Word(word) {
         this.letters.push(new Letter.Letter(word.charAt(i)));
     }
 
+    this.guesses = [];
+
     this.toString = function () {
         var string = "";
         for (var i = 0; i < this.letters.length; i++) {
@@ -20,6 +22,7 @@ function Word(word) {
             var bool = this.letters[i].check(c);
             correct = correct || bool;
         }
+        this.guesses.push(c.toLowerCase());
         return correct;
     }
 

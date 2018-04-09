@@ -20,12 +20,15 @@ function playGame() {
         }
     ]).then(function (inquirerResponse) {
         var guess = inquirerResponse.guess;
-        var correct = word.check(guess);
-        console.log(word.toString());
-        if(correct) console.log("Correct!");
+        if(word.guesses.includes(guess)) console.log("Letter already guessed.");
         else {
-            guesses--;
-            console.log(`Incorrect! Guesses Remaining: ${guesses}`);
+            var correct = word.check(guess);
+            console.log(word.toString());
+            if(correct) console.log("Correct!");
+            else {
+                guesses--;
+                console.log(`Incorrect! Guesses Remaining: ${guesses}`);
+            }
         }
         if(guesses === 0 || word.complete()) {
             if(guesses === 0) console.log("Sorry, you lost. Better luck on the next word!");
