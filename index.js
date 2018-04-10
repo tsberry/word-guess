@@ -1,15 +1,8 @@
 var Word = require("./Word.js");
 var inquirer = require("inquirer");
 
-var words = ["Hello", "Goodbye", "World"];
-
-function getWord() {
-    var rand = Math.floor(Math.random() * words.length);
-    return words[rand];
-}
-
 var guesses = 10;
-var word = new Word(getWord());
+var word = new Word();
 
 function playGame() {
     inquirer.prompt([
@@ -36,7 +29,7 @@ function playGame() {
             if(guesses === 0) console.log("Sorry, you lost. Better luck on the next word!");
             else console.log("You got it right! Next Word!");
             guesses = 10;
-            word = new Word(getWord());
+            word = new Word();
             console.log("");
             console.log(word.toString());
             console.log("");

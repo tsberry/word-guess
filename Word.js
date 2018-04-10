@@ -1,9 +1,12 @@
 var Letter = require("./Letter.js");
 
-function Word(word) {
+function Word() {
+    this.words = ["Hello", "Goodbye", "World"];
+    var rand = Math.floor(Math.random() * this.words.length);
+    this.word = this.words[rand];
     this.letters = [];
-    for (var i = 0; i < word.length; i++) {
-        this.letters.push(new Letter(word.charAt(i)));
+    for (var i = 0; i < this.word.length; i++) {
+        this.letters.push(new Letter(this.word.charAt(i)));
     }
 
     this.guesses = [];
