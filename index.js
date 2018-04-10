@@ -9,7 +9,7 @@ function getWord() {
 }
 
 var guesses = 10;
-var word = new Word.Word(getWord());
+var word = new Word(getWord());
 
 function playGame() {
     inquirer.prompt([
@@ -36,7 +36,7 @@ function playGame() {
             if(guesses === 0) console.log("Sorry, you lost. Better luck on the next word!");
             else console.log("You got it right! Next Word!");
             guesses = 10;
-            word = new Word.Word(getWord());
+            word = new Word(getWord());
             console.log("");
             console.log(word.toString());
             console.log("");

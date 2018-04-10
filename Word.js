@@ -3,7 +3,7 @@ var Letter = require("./Letter.js");
 function Word(word) {
     this.letters = [];
     for (var i = 0; i < word.length; i++) {
-        this.letters.push(new Letter.Letter(word.charAt(i)));
+        this.letters.push(new Letter(word.charAt(i)));
     }
 
     this.guesses = [];
@@ -35,6 +35,4 @@ function Word(word) {
     }
 }
 
-module.exports = {
-    Word: Word
-}
+module.exports = Word;
