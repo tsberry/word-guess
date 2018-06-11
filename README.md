@@ -5,9 +5,7 @@
 * [Technologies](#technologies)
 * [Requirements](#requirements)
 * [Instructions](#instructions)
-* [bamazonCustomer](#bamazonCustomer)
-* [bamazonManager](#bamazonManager)
-* [bamazonSupervisor](#bamazonSupervisor)
+* [The Game](#the-game)
 
 # About
 Word Guess is a command line hangman game. It picks a random word, then takes in user input and compares it to the word, to determine if the user guess was correct.
